@@ -1,16 +1,33 @@
 const container = document.querySelector('.container');
+const gridContainer = document.querySelector('.grid-container');
 
-const grid = document.querySelector('.grid');
+const createGridContainer = () =>{
+  const gridContainer = document.createElement("div");
+  gridContainer.id="grid-container"
+  container.appendChild(gridContainer);
+}
 
-function createGrid(number) {
-    number = number * number
-    for (let i = 0; i < number; i++) {
-      let div = document.createElement('div');
-      div.classList.add('square');
-      div.style.width = `${Math.sqrt(((500*500)/number))}px`;
-      div.style.height =`${Math.sqrt(((500*500)/number))}px`;
-      container.appendChild(div);
-    }
+function setGridSize(gridSize){
+  for(let i=0; i <gridSize*gridSize;i++){
+    const gridContainer = document.querySelector("#grid-container");
+    gridContainer.style.gridTemplateColumns = `repeat(${gridSize},auto)`;
+    gridContainer.style.gridTemplateRows = `repeat(${gridSize},auto)`;
+    let gridBlock = document.createElement("div");
+    gridBlock.setAttribute("class","gridBlock");
+    gridContainer.appendChild(gridBlock);
   }
+}
 
-createGrid(16);
+
+
+
+
+createGridContainer();
+setGridSize(16);
+
+const gridBlocks = document.querySelectorAll(".gridBlock");
+gridBlocks.forEach((gridBlock) => {
+    gridBlock.addEventListener("mouseenter", function(e) {   
+        e.target.setAttribute("class", "hovered")
+    });
+});

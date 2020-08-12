@@ -8,9 +8,20 @@
   display: flex;
   background-color: whitesmoke;
 }
-
-.square {
-  background-color: white;
-  border: 1px solid lightgray;
+#grid-container {
+  display: grid;
+  height: 75vh;
+  width: 75vh;
+  box-sizing: border-box;
+  border: solid 1px purple;
 }
 
+.gridBlock {
+  background-color: white;
+  border: 1px solid lightgray;
+  box-sizing: border-box;
+}
+
+.hovered{
+  background-color: black;
+}
