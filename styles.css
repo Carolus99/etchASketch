@@ -1,4 +1,12 @@
 
+h1{
+  
+  display:flex;
+  justify-content: center;
+  font-size: 69px;
+  
+}
+
 .container{
   height: 500px;
   width: 500px;
@@ -6,14 +14,14 @@
   margin-top: 15px;
   flex-wrap: wrap;
   display: flex;
-  background-color: whitesmoke;
+  background-color: green;
 }
 #grid-container {
   display: grid;
   height: 75vh;
   width: 75vh;
   box-sizing: border-box;
-  border: solid 1px purple;
+  border: solid 1px whitesmoke;
 }
 
 .gridBlock {
@@ -24,4 +32,9 @@
 
 .hovered{
   background-color: black;
+}
+
+.buttons{
+  display:flex;
+  justify-content: center;
 }
